@@ -12,6 +12,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<restaurant> restaurants = [];
+  List<meal>meals=[];
+  // Future<void> loadMeals() async {
+  //   meals = await ApiService.getMeal();
+  //
+  //   setState(() {});
+  // }
 
   // Future<void> loadresturants() async {
   //   restaurants = await ApiService.getRestaurant();
