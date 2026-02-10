@@ -81,22 +81,60 @@ class _HomeState extends State<Home> {
           ),
         ),
 
-        child: restaurants.isEmpty
-            ? const Center(
-          child: CircularProgressIndicator(color: Colors.orange),
-        )
-            : ListView.builder(
-          padding: const EdgeInsets.all(16),
-          itemCount: restaurants.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: ResturantCard(
-                r: restaurants[index],
+        child:Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.25, //quarter of the screen
+              child: meals.isEmpty
+                  ? const Center(
+                child: CircularProgressIndicator(color: Colors.orange),
+              )
+                  : ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: meals.length,
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                itemBuilder: (context, index) {
+                  final m = meals[index];
+                  return MealCard(m: m);
+                },
               ),
-            );
-          },
-        ),
+            ),
+
+            //spacer
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Divider(
+                thickness: 1.5,
+                color: Colors.orange,
+              ),
+            ),
+
+
+
+
+
+
+
+
+            Expanded(
+              child: restaurants.isEmpty
+                ? const Center(
+              child: CircularProgressIndicator(color: Colors.orange),
+                        )
+                : ListView.builder(
+              padding: const EdgeInsets.all(16),
+              itemCount: restaurants.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: ResturantCard(
+                    r: restaurants[index],
+                  ),
+                );
+              },
+                        ),
+            ),
+        ]),
       ),
     );
   }
