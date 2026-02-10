@@ -18,6 +18,35 @@ class _HomeState extends State<Home> {
   //
   //   setState(() {});
   // }
+
+  Future<void> loadMeals() async {
+  meals = [
+    meal(
+      name: "Burger",
+      info: "Beef + cheese",
+      price: 8,
+      resName: "Burger House",
+      imgUrl: "https://picsum.photos/200",
+    ),
+    meal(
+      name: "Pizza",
+      info: "Mozzarella",
+      price: 11,
+      resName: "Italiano",
+      imgUrl: "https://picsum.photos/201",
+    ),
+    meal(
+      name: "Shawarma",
+      info: "Chicken",
+      price: 5,
+      resName: "Damascus Grill",
+      imgUrl: "https://picsum.photos/202",
+    ),
+  ];
+  setState(() {
+
+  });}
+
   Future<void> loadresturants() async {
     restaurants = [
       restaurant(
