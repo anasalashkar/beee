@@ -1,3 +1,5 @@
+import 'package:bee/models/meal.dart';
+import 'package:bee/widgets/Meal_Card.dart';
 import 'package:flutter/material.dart';
 import 'package:bee/models/restaurnat.dart';
 import 'package:bee/services/api_services.dart';
