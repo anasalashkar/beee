@@ -4,7 +4,7 @@ class meal{
   String name;
   String info;
   int price;
-  restaurant resName;
+ String resName;
   String imgUrl;
   meal({required this.name,required this.info ,required this.price, required this.resName,required this.imgUrl});
   factory meal.fromJson(Map<String,dynamic>json){
